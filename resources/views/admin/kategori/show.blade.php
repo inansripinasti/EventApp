@@ -1,0 +1,48 @@
+@extends('admin.layout.index')
+@section('content')
+<div class="content-wrapper">
+<div class="page-header">
+    <h3 class="page-title">
+      <span class="page-title-icon bg-gradient-primary text-white me-2">
+        <i class="mdi mdi-home"></i>
+      </span> Daftar Buku
+    </h3>
+    <nav aria-label="breadcrumb">
+      <ul class="breadcrumb">
+        <li class="breadcrumb-item active" aria-current="page">
+          <span></span>Overview <i class="mdi mdi-alert-circle-outline icon-sm text-primary align-middle"></i>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <a class="btn btn-primary" href="{{ url('/dashboard/kategori/create') }}">+ Tambah Buku</a>
+  <div class="card">
+  <div class="card-body">
+    @if (session('success'))
+      <div class="alert alert-success">
+        {{ session('success') }}
+      </div>
+    @endif
+    <h4 class="card-title">Daftar Buku Tersedia</h4>
+  <div class="container">
+  <div class="table-responsive">  
+        <table class="table table-hover table-bordered" width="100%" border="1" cellspacing="2" cellpadding="2">
+            <thead>
+                <tr class="table-success">
+                    <th>ID</th>
+                    <th>Nama</th>
+                </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{{ $kategori_peserta->id }}</td>
+                <td>{{ $kategori_peserta->nama }}</td>
+                </tr>
+            </tbody>
+        </table>
+  </div>
+  </div>
+</div>
+</div>        
+@endsection

@@ -33,7 +33,7 @@
                     <table class="table table-bordered">
                         <tr class="table-success">
                             <th>No</th>
-                            <th>Tanggal Kegiatan</th>
+                            <th>Tanggal Daftar</th>
                             <th>Alasan</th>
                             <th>Nama</th>
                             <th>Nama Kegiatan</th>
@@ -49,15 +49,13 @@
                               <td>{{ $daftars->nama_kegiatan }}</td>
                               <td>{{ $daftars->kategori_peserta }}</td>
                               <td>
-                                  <a  class="btn btn-primary btn-sm">View</a>
-                                  <a class="btn btn-success btn-sm">Edit</a>
-                                  <a class="btn btn-success btn-sm">Delete</a>
-                                  {{-- href="{{ url('/dashboard/book/show', $book->id )}}" --}}
-                                  {{-- <form action="{{url('/dashboard/book/destroy', $book->id)}}" method="post" class="d-inline">
+                                <a href="{{ url('/dashboard/daftar/show', $daftars->id )}}" class="btn btn-primary btn-sm">View</a>
+                                <a href="{{ url('/dashboard/daftar/edit', $daftars->id )}}" class="btn btn-success btn-sm">Edit</a>
+                                  <form action="{{url('/dashboard/daftar/destroy', $daftars->id)}}" method="post" class="d-inline">
                                   @csrf
                                   @method('DELETE')
-                                    <button type="submit" class="btn btn-danger btn-sm" onclick="if(!confirm('Anda Yakin Hapus Data Buku?')) {return false}" >Delete</button>
-                                  </form> --}}
+                                    <button type="submit" class="btn btn-danger btn-sm" onclick="if(!confirm('Anda Yakin Hapus Peserta?')) {return false}" >Delete</button>
+                                  </form>
                               </td>
                           </tr>
                         @endforeach

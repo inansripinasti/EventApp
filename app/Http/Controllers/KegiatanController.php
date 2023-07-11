@@ -24,7 +24,8 @@ class KegiatanController extends Controller
      */
     public function create()
     {
-        //
+        $kegiatan = Kegiatan::all();
+        // return view('admin.kegiatan.create', compact('kegiatan'));
     }
 
     /**
@@ -45,7 +46,7 @@ class KegiatanController extends Controller
         ]);
         // 
         Kegiatan::create($validated);
-        return redirect('/dashboard/daftar');
+        return redirect('/dashboard/kegiatan');
     }
 
     /**
@@ -53,7 +54,11 @@ class KegiatanController extends Controller
      */
     public function show(string $id)
     {
-        //
+        // Mencari  data berdasarkan id
+        $kegiatan = Kegiatan::find($id);
+        return view('admin.kegiatan.show', [
+            'kegiatan' => $kegiatan
+        ]);
     }
 
     /**
@@ -61,7 +66,11 @@ class KegiatanController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        //mencari data berdasarkan id
+        $kegiatan = Kegiatan::find($id);
+        return view('admin.kegiatan.edit', [
+            'kegiatan' => $kegiatan
+        ]);
     }
 
     /**
@@ -69,7 +78,24 @@ class KegiatanController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        //mencari data berdasarkan id
+        $kegiatan = Kegiatan::find($id);
+
+        // validasi form
+        $validated = $request->validate([
+            'judul' => 'required',
+            'kapasitas' => 'required',
+            'harga_tiket' => 'required',
+            'tanggal' => 'required',
+            'narasumber' => 'required',
+            'tempat' => 'required',
+            'jenis_kegiatan' => 'required',
+
+        ]);
+
+        // eksekusi update data
+        $kegiatan->update($validated);
+        return redirect('/dashboard/kegiatan')->with('success','Data Berhasil di Perbarui');
     }
 
     /**
@@ -77,6 +103,11 @@ class KegiatanController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        // mencari data berdasarkan id
+        $kegiatan = Kegiatan::find($id);
+        $kegiatan->delete();
+        return redirect('/dashboard/kegiatan');
     }
+
+
 }

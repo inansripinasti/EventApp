@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+// import model
+use App\Models\Kategori_peserta;
 
 class KategoriController extends Controller
 {
@@ -11,7 +13,10 @@ class KategoriController extends Controller
      */
     public function index()
     {
-        return view('admin.kategori.index');
+        $kategori_peserta = Kategori_peserta::all();
+        return view('admin.kategori.index', [
+            'kategori_peserta' => $kategori_peserta
+        ]);
     }
 
     /**
@@ -19,7 +24,7 @@ class KategoriController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.kategori.create');
     }
 
     /**
@@ -27,7 +32,13 @@ class KategoriController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // validasi form
+        $validated = $request->validate([
+            'nama' => 'required',
+        ]);
+        
+        Kategori_peserta::create($validated);
+        return redirect('/dashboard/kategori/create');
     }
 
     /**
@@ -35,7 +46,11 @@ class KategoriController extends Controller
      */
     public function show(string $id)
     {
-        //
+        // Mencari  data berdasarkan id
+        $kategori_peserta = Kategori_peserta::find($id);
+        return view('admin.kategori.show', [
+            'kategori_peserta' => $kategori_peserta
+        ]);
     }
 
     /**
@@ -43,7 +58,11 @@ class KategoriController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        // Mencari  data berdasarkan id
+        $kategori_peserta = Kategori_peserta::find($id);
+        return view('admin.kategori.edit', [
+            'kategori_peserta' => $kategori_peserta
+        ]);
     }
 
     /**
@@ -51,7 +70,15 @@ class KategoriController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        //mencari data berdasarkan id
+        $kategori_peserta = Kategori_peserta::find($id);
+
+        // validasi form
+        $validated = $request->validate([
+            'nama' => 'required',
+
+        ]);
+
     }
 
     /**
@@ -59,6 +86,9 @@ class KategoriController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        // mencari data berdasarkan id
+        $kategori_peserta = Kategori_peserta::find($id);
+        $kategori_peserta->delete();
+        return redirect('/dashboard/kategori');
     }
 }

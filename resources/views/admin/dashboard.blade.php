@@ -22,7 +22,8 @@
             <div class="card">
               <div class="card-body">
                 <h4 class="card-title text-white">Todo</h4>
-                <h1>cek cek</h1>
+                <h1>Welcome</h1>
+                <h4>Kelompok 2 - Sistem Informasi 15</h4>
             </div>
           </div>
         </div>

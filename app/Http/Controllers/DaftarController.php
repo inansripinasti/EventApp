@@ -25,7 +25,7 @@ class DaftarController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.daftar.create');
     }
 
     /**
@@ -44,7 +44,7 @@ class DaftarController extends Controller
         ]);
         // 
         Daftar::create($validated);
-        return redirect('/dashboard/daftar');
+        return redirect('/dashboard/daftar/create');
     }
 
     /**
@@ -76,6 +76,9 @@ class DaftarController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        // mencari data berdasarkan id
+        $daftar = Daftar::find($id);
+        $daftar->delete();
+        return redirect('/dashboard/daftar');
     }
 }
