@@ -41,6 +41,8 @@
                 </tr>
             </tbody>
         </table>
+        <a type="button" href="{{ url('/dashboard/kegiatan') }}" class="btn btn-light">Back</a>
+
   </div>
   </div>
 </div>

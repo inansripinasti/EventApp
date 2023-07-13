@@ -34,21 +34,15 @@
                 @csrf
                 @method('put')
                 <div class="form-group row">
-                    <label for="id" class="col-sm-4 col-form-label">ID</label>
-                    <div class="col-sm-8">
-                        <input type="text" class="form-control" id="id" name="id"
-                            placeholder="id">
-                    </div>
-                </div>
-                <div class="form-group row">
                     <label for="nama" class="col-sm-4 col-form-label">nama jenis kegiatan</label>
                     <div class="col-sm-8">
                         <input type="text" class="form-control" id="nama" name="nama"
-                            placeholder="nama">
-                  
+                            placeholder="nama" value="{{ $jenis_kegiatan->nama }}">
+                    </div>
                 </div>
                 <button type="submit" class="btn btn-gradient-primary me-2">Submit</button>
-                <button type="reset" class="btn btn-light">Reset</button>
+                <a type="button" href="{{ url('/dashboard/kegiatan') }}" class="btn btn-light">Back</a>
+                
             </form>
         </div>
     </div>

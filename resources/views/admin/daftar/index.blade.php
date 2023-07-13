@@ -5,7 +5,7 @@
     <div class="page-header">
         <h3 class="page-title">
           <span class="page-title-icon bg-gradient-primary text-white me-2">
-            <i class="mdi mdi-book"></i>
+            <i class="mdi mdi-script"></i>
           </span> Daftar Peserta
         </h3>
         <nav aria-label="breadcrumb">
@@ -27,7 +27,6 @@
                {{ session('success') }}
            </div>
           @endif
-          <h4 class="card-title">Daftar Buku Tersedia</h4>
             <div class="container">
                 <div class="table-responsive">
                     <table class="table table-bordered">
@@ -49,8 +48,6 @@
                               <td>{{ $daftars->nama_kegiatan }}</td>
                               <td>{{ $daftars->kategori_peserta }}</td>
                               <td>
-                                <a href="{{ url('/dashboard/daftar/show', $daftars->id )}}" class="btn btn-primary btn-sm">View</a>
-                                <a href="{{ url('/dashboard/daftar/edit', $daftars->id )}}" class="btn btn-success btn-sm">Edit</a>
                                   <form action="{{url('/dashboard/daftar/destroy', $daftars->id)}}" method="post" class="d-inline">
                                   @csrf
                                   @method('DELETE')

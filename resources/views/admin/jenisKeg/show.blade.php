@@ -40,6 +40,8 @@
                 <td>{{ $jenis_kegiatans->nama }}</td>
                 </tr>
             </tbody>
+            <a href="{{url ('/dashboard/jenisKeg/')}}" class="btn btn-gradient-danger">Back</a>
+
         </table>
   </div>
   </div>

@@ -6,7 +6,7 @@
         <h3 class="page-title">
             <span class="page-title-icon bg-gradient-primary text-white me-2">
                 <i class="mdi mdi-member"></i>
-            </span> Tambah Kenis Kegiatan
+            </span> Tambah Jenis Kegiatan
         </h3>
         <nav aria-label="breadcrumb">
             <ul class="breadcrumb">
@@ -18,7 +18,6 @@
     </div>
     <div class="card">
         <div class="card-body">
-            <h3>Tambah Jenis Kegiatan</h3><br />
             {{-- menampilkan error validasi --}}
             @if (count($errors) > 0)
                 <div class="alert alert-danger">
@@ -33,26 +32,15 @@
             <form class="forms-sample" action="{{url('/dashboard/JenisKeg/store')}}" method="POST">
                 @csrf
                 <div class="form-group row">
-                    <label for="id" class="col-sm-4 col-form-label">ID</label>
-                    <div class="col-sm-8">
-                        <input type="text" class="form-control" id="id" name="id"
-                            placeholder="id">
-                    </div>
-                </div>
-                <div class="form-group row">
                     <label for="nama" class="col-sm-4 col-form-label">nama jenis kegiatan</label>
                     <div class="col-sm-8">
                         <input type="text" class="form-control" id="nama" name="nama"
-                            placeholder="nama">
+                            placeholder="jenis kegiatan">
                     </div>
-                </div>
-              
                 </div>
                 <button type="submit" class="btn btn-gradient-primary me-2">Submit</button>
                 <button type="reset" class="btn btn-light">Reset</button>
             </form>
-            </div>
-            </div>
         </div>
       </div>
 

@@ -40,7 +40,8 @@
                     </div>
                 </div>
                 <button type="submit" class="btn btn-gradient-primary me-2">Submit</button>
-                <button type="reset" class="btn btn-light">Reset</button>
+                <a type="button" href="{{ url('/dashboard/kegiatan') }}" class="btn btn-light">Back</a>
+
             </form>
         </div>
     </div>

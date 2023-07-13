@@ -38,7 +38,6 @@ class jenisKegController extends Controller
     {
         ///validasi form input
         $validated = $request->validate([
-            'id' => 'required|min:1|max:20',
             'nama' => 'required|max:20',
 
         ]);
@@ -51,22 +50,16 @@ class jenisKegController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
      *
      */
     public function show($id)
     {
-        // mencari data berdasarkan ID
-        $jenis_kegiatan = Jenis_kegiatan::find($id);
-        return view('admin.jenisKeg.show', [
-            'jenis_kegiatan' => $jenis_kegiatan
-        ]);
+        // 
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
      *
      */
     public function edit($id)
@@ -81,8 +74,7 @@ class jenisKegController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * 
      *
      */
     public function update(Request $request, string $id)
@@ -90,7 +82,6 @@ class jenisKegController extends Controller
         // mencari data berdasarkan ID
         $jenis_kegiatan = Jenis_kegiatan::find($id);
         $validated = $request->validate([
-            'id' => 'required|min:1|max:20',
             'nama' => 'required|max:20',
 
         ]);
@@ -103,7 +94,6 @@ class jenisKegController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
      *
      */
     public function destroy(string $id)

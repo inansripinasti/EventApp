@@ -78,8 +78,12 @@
                 <div class="form-group row">
                     <label for="jenis_kegiatan" class="col-sm-4 col-form-label">Jenis Kegiatan</label>
                     <div class="col-sm-8">
-                        <input type="Text" class="form-control" id="jenis_kegiatan" name="jenis_kegiatan"
-                            placeholder="">
+                        <select name="jenis_kegiatan" id="jenis_kegiatan" class="form-control">
+                            <option value="">Pilih Kegiatan</option>
+                            @foreach ($jenis_kegiatan as $jenis)
+                            <option value="">{{ $jenis->nama }}</option>
+                            @endforeach
+                          </select>
                     </div>
                 </div>
                 <button type="submit" class="btn btn-gradient-primary me-2">Submit</button>

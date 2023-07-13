@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 // import model
 use App\Models\Daftar;
+use App\Models\Kegiatan;
+use App\Models\Kategori_peserta;
 
 
 class DaftarController extends Controller
@@ -14,6 +16,7 @@ class DaftarController extends Controller
      */
     public function index()
     {
+        
         $daftar = Daftar::all();
         return view('admin.daftar.index', [
             'daftar' => $daftar
@@ -25,7 +28,13 @@ class DaftarController extends Controller
      */
     public function create()
     {
-        return view('admin.daftar.create');
+        $kategori_peserta = Kategori_peserta::all();
+        $kegiatan = Kegiatan::all();
+
+        return view('admin.daftar.create', [
+            'kegiatan' => $kegiatan,
+            'kategori_peserta' => $kategori_peserta
+        ]);
     }
 
     /**
@@ -33,13 +42,15 @@ class DaftarController extends Controller
      */
     public function store(Request $request)
     {
+        $jenis_kegiatan_options = Kegiatan::pluck('judul')->toArray();
+        $kategori_peserta_options = Kategori_peserta::pluck('nama')->toArray();
         // validasi form
         $validated = $request->validate([
             'tgl_daftar' => 'required',
             'alasan' => 'required',
             'nama_peserta' => 'required',
-            'nama_kegiatan' => 'required',
-            'kategori_peserta' => 'required',
+            'nama_kegiatan' => 'required'| 'in:' . implode(',', $jenis_kegiatan_options),
+            'kategori_peserta' => 'required'| 'in:' . implode(',', $kategori_peserta_options),
 
         ]);
         // 

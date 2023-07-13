@@ -38,7 +38,7 @@ class KategoriController extends Controller
         ]);
         
         Kategori_peserta::create($validated);
-        return redirect('/dashboard/kategori/create');
+        return redirect('/dashboard/kategori/');
     }
 
     /**
@@ -46,11 +46,7 @@ class KategoriController extends Controller
      */
     public function show(string $id)
     {
-        // Mencari  data berdasarkan id
-        $kategori_peserta = Kategori_peserta::find($id);
-        return view('admin.kategori.show', [
-            'kategori_peserta' => $kategori_peserta
-        ]);
+        //
     }
 
     /**
@@ -78,6 +74,10 @@ class KategoriController extends Controller
             'nama' => 'required',
 
         ]);
+
+        // eksekusi update data
+        $kategori_peserta->update($validated);
+        return redirect('/dashboard/kategori')->with('success', 'Data Berhasil di Perbarui');
 
     }
 

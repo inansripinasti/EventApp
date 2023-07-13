@@ -5,7 +5,7 @@
         <h3 class="page-title">
           <span class="page-title-icon bg-gradient-primary text-white me-2">
             <i class="mdi mdi-book"></i>
-          </span> Kategori Peserta
+          </span>Kategori Peserta
         </h3>
         <nav aria-label="breadcrumb">
           <ul class="breadcrumb">
@@ -14,6 +14,9 @@
             </li>
           </ul>
         </nav>
+    </div>
+    <div>
+      <a href="{{url ('/dashboard/kategori/create')}}" class="btn btn-gradient-primary">+ Tambah</a>
     </div>
     <div>
         {{-- <a href="{{url ('/dashboard/book/create')}}" class="btn btn-gradient-primary">+ Tambah</a> --}}
@@ -26,7 +29,6 @@
                {{ session('success') }}
            </div>
           @endif
-          <h4 class="card-title">Kategori Peserta</h4>
             <div class="container">
                 <div class="table-responsive">
                     <table class="table table-bordered">
@@ -40,7 +42,6 @@
                               <td>{{ $loop->iteration }}</td>
                               <td>{{ $Kategori_peserta->nama }}</td>
                               <td>
-                                <a class="btn btn-primary btn-sm" href="{{ url('/dashboard/kategori/show', $Kategori_peserta->id) }}">View</a>
                                 <a class="btn btn-primary btn-sm" href="{{ url('/dashboard/kategori/edit', $Kategori_peserta->id) }}">Edit</a>
                                   <form action="{{url('/dashboard/kategori/destroy', $Kategori_peserta->id)}}" method="post" class="d-inline">
                                   @csrf

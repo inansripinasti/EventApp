@@ -27,7 +27,6 @@
                {{ session('success') }}
            </div>
           @endif
-          <h4 class="card-title">Jenis KEgiatan</h4>
             <div class="container">
                 <div class="table-responsive">
                     <table class="table table-bordered">
@@ -44,7 +43,7 @@
                               
                               <td>
                                 
-                                <a href="{{ url('/dashboard/JenisKeg/edit', $jenis_kegiatans->id )}}" class="btn btn-success btn-sm">Edit</a>
+                                <a href="{{ url('/dashboard/JenisKeg/edit', $jenis_kegiatans->id )}}" class="btn btn-primary btn-sm">Edit</a>
                                   <form action="{{url('/dashboard/JenisKeg/destroy', $jenis_kegiatans->id)}}" method="post" class="d-inline">
                                   @csrf
                                   @method('DELETE')

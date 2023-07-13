@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 // import model
+use App\Models\Jenis_kegiatan;
 use App\Models\Kegiatan;
 
 class KegiatanController extends Controller
@@ -24,8 +25,10 @@ class KegiatanController extends Controller
      */
     public function create()
     {
-        $kegiatan = Kegiatan::all();
-        // return view('admin.kegiatan.create', compact('kegiatan'));
+        $jenis_kegiatan = Jenis_kegiatan::all();
+        return view('admin.kegiatan.create', [
+            'jenis_kegiatan' => $jenis_kegiatan,
+        ]);
     }
 
     /**
@@ -33,8 +36,10 @@ class KegiatanController extends Controller
      */
     public function store(Request $request)
     {
+        
         // validasi form
         $validated = $request->validate([
+            // 'gambar' => 'required',
             'judul' => 'required',
             'kapasitas' => 'required',
             'harga_tiket' => 'required',
@@ -44,6 +49,16 @@ class KegiatanController extends Controller
             'jenis_kegiatan' => 'required',
 
         ]);
+
+        // $nm = $request->gambar;
+        // $namaFile = $nm->getClientOriginalName();
+        //     $dtUpload = new kegiatan();
+        //     $dtUpload->nama = $request->nama;
+        //     $dtUpload->gambar = $namaFile;
+
+        //     $nm->move(public_path().'/uploadgambar', $namaFile);
+        //     $dtUpload->save();
+
         // 
         Kegiatan::create($validated);
         return redirect('/dashboard/kegiatan');
@@ -66,10 +81,13 @@ class KegiatanController extends Controller
      */
     public function edit(string $id)
     {
+        $jenis_kegiatan = Jenis_kegiatan::all();
         //mencari data berdasarkan id
         $kegiatan = Kegiatan::find($id);
+
         return view('admin.kegiatan.edit', [
-            'kegiatan' => $kegiatan
+            'kegiatan' => $kegiatan,
+            'jenis_kegiatan' => $jenis_kegiatan,
         ]);
     }
 

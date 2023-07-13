@@ -24,15 +24,21 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{ url('/dashboard/daftar') }}">
-                <span class="menu-title">Pendaftaran</span>
-                <i class="mdi mdi-book menu-icon"></i>
+              <a class="nav-link" href="{{ url('/dashboard/jenisKeg') }}">
+                <span class="menu-title">Jenis Kegiatan</span>
+                <i class="mdi mdi-home-map-marker menu-icon"></i>
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{{ url('/dashboard/kegiatan') }}">
                 <span class="menu-title">Kegiatan</span>
-                <i class="mdi mdi-chevron-left menu-icon"></i>
+                <i class="mdi mdi-theater menu-icon"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url('/dashboard/daftar') }}">
+                <span class="menu-title">Pendaftaran</span>
+                <i class="mdi mdi-script menu-icon"></i>
               </a>
             </li>
             </li>
@@ -40,12 +46,6 @@
               <a class="nav-link" href="{{ url('/dashboard/kategori') }}">
                 <span class="menu-title">Kategori Peserta</span>
                 <i class="mdi mdi-account-multiple menu-icon"></i>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{{ url('/dashboard/jenisKeg') }}">
-                <span class="menu-title">Jenis Kegiatan</span>
-                <i class="mdi mdi-chevron-double-left menu-icon"></i>
               </a>
             </li>
         </nav>

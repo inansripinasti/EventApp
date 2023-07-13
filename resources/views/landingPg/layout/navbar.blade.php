@@ -8,7 +8,7 @@
     
     <!--====== Favicon Icon ======-->
     <link rel="shortcut icon" href="{{ asset('landing_page/assets/img/logo.png') }}" type="image/png">
-    <title>Grand - Event and Conference Template</title>
+    <title>Eventify</title>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" type="text/css" href="{{ asset('landing_page/assets/css/bootstrap.min.css') }}" >
@@ -32,7 +32,7 @@
     <header id="header-wrap">
       <!-- Navbar Start -->
       <nav class="navbar navbar-expand-lg fixed-top scrolling-navbar">
-        <div class="container">
+        <div class="container" style="height: 80px;">
           <!-- Brand and toggle get grouped for better mobile display -->
           <div class="navbar-header">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -45,24 +45,21 @@
           </div>
           <div class="collapse navbar-collapse" id="main-navbar">
             <ul class="navbar-nav mr-auto w-100 justify-content-end">
-              <li class="nav-item active">
-                <a class="nav-link" href="#header-wrap">
+              <li class="nav-item ">
+                <a class="nav-link" href="{{ url('/index') }}"  >
                   Home
                 </a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#about">
-                  About
+              <li class="nav-item" >
+                <a class="nav-link" href="{{ url('/dashboard/daftar/create') }}" 
+                 >
+                  Booking
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{{ url('/dashboard/daftar/create') }}">
-                  Contact
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#pricing">
-                  Dashboard
+                <a class="nav-link btn btn-border btn-lg" href="{{ url('home') }}"
+                style="margin-top:7px; " >
+                  Login
                 </a>
               </li>
             </ul>
@@ -72,31 +69,13 @@
         <!-- Mobile Menu Start -->
         <ul class="mobile-menu">
           <li>
-            <a class="page-scrool" href="#header-wrap">Home</a>
+            <a class="page-scrool" href="{{ url('/index') }}">Home</a>
           </li>
           <li>
-            <a class="page-scrool" href="#about">About</a>
+            <a class="page-scroll" href="{{url ('/dashboard/daftar/create')}}">Booking</a>
           </li>
           <li>
-             <a class="page-scroll" href="#schedules">schedules</a>
-          </li>
-          <li>
-            <a class="page-scroll" href="#team">Speakers</a>
-          </li>
-          <li>
-            <a class="page-scroll" href="#gallery">Gallery</a>
-          </li>
-          <li>
-            <a class="page-scroll" href="#faq">Faq</a>
-          </li>
-          <li>
-            <a class="page-scroll" href="#sponsors">Sponsors</a>
-          </li>
-          <li>
-            <a class="page-scroll" href="#pricing">pricing</a>
-          </li>
-          <li>
-            <a class="page-scroll" href="{{url ('/dashboard/daftar/create')}}">Contact</a>
+            <a class="page-scroll" href="{{url ('home')}}">Login</a>
           </li>
         </ul>
         <!-- Mobile Menu End -->

@@ -5,7 +5,7 @@
         <h3 class="page-title">
           <span class="page-title-icon bg-gradient-primary text-white me-2">
             <i class="mdi mdi-book"></i>
-          </span> Kegiatan
+          </span> Daftar Kegiatan
         </h3>
         <nav aria-label="breadcrumb">
           <ul class="breadcrumb">
@@ -26,7 +26,6 @@
                {{ session('success') }}
            </div>
           @endif
-          <h4 class="card-title">Kegiatan</h4>
             <div class="container">
                 <div class="table-responsive">
                     <table class="table table-bordered">
@@ -35,10 +34,7 @@
                             <th>judul</th>
                             <th>kapasitas</th>
                             <th>Harga Tiket</th>
-                            <th>Tanggal</th>
                             <th>Nara Sumber</th>
-                            <th>tempat</th>
-                            <th>jenis_kegiatan</th>
                             <th>Action</th>
                         </tr>
                         @foreach ($kegiatan as $kegiatans)
@@ -47,13 +43,10 @@
                               <td>{{ $kegiatans->judul }}</td>
                               <td>{{ $kegiatans->kapasitas }}</td>
                               <td>{{ $kegiatans->harga_tiket }}</td>
-                              <td>{{ $kegiatans->tanggal }}</td>
                               <td>{{ $kegiatans->narasumber }}</td>
-                              <td>{{ $kegiatans->tempat }}</td>
-                              <td>{{ $kegiatans->jenis_kegiatan }}</td>
                               <td>
-                                <a href="{{ url('/dashboard/kegiatan/show', $kegiatans->id )}}" class="btn btn-primary btn-sm">View</a>
-                                <a href="{{ url('/dashboard/kegiatan/edit', $kegiatans->id )}}" class="btn btn-success btn-sm">Edit</a>
+                                <a href="{{ url('/dashboard/kegiatan/show', $kegiatans->id )}}" class="btn btn-success btn-sm">View</a>
+                                <a href="{{ url('/dashboard/kegiatan/edit', $kegiatans->id )}}" class="btn btn-primary btn-sm">Edit</a>
                                   <form action="{{url('/dashboard/kegiatan/destroy', $kegiatans->id)}}" method="post" class="d-inline">
                                   @csrf
                                   @method('DELETE')

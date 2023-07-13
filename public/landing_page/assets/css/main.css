@@ -4,7 +4,7 @@ html {
 }
 
 body {
-  background: #fff;
+  background: #f1dae2;
   font-size: 15px;
   font-weight: 400;
   font-family: 'Lato', sans-serif;
@@ -1647,8 +1647,11 @@ a.back-to-top:hover, a.back-to-top:focus {
 
 .container-form .form-wrapper {
   background-color: white;
+  width: 800px;
   padding: 56px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .container-form .form-wrapper .form-group {
