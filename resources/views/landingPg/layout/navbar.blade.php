@@ -7,7 +7,7 @@
 
     
     <!--====== Favicon Icon ======-->
-    <link rel="shortcut icon" href="{{ asset('landing_page/assets/img/logo.png') }}" type="image/png">
+    <link rel="shortcut icon" href="{{ asset('landing_page/assets/img/favicon.png') }}" type="image/png">
     <title>Eventify</title>
 
     <!-- Bootstrap CSS -->
@@ -41,7 +41,7 @@
               <span class="icon-menu"></span>
               <span class="icon-menu"></span>
             </button>
-            <a href="index.html" class="navbar-brand"><img src="{{ asset('landing_page/assets/img/logo.png') }}" alt=""></a>
+            <a href="{{ url('/index') }}" class="navbar-brand"><img src="{{ asset('landing_page/assets/img/logo.png') }}" alt=""></a>
           </div>
           <div class="collapse navbar-collapse" id="main-navbar">
             <ul class="navbar-nav mr-auto w-100 justify-content-end">
@@ -57,7 +57,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link btn btn-border btn-lg" href="{{ url('home') }}"
+                <a class="nav-link btn btn-border btn-lg" href="{{ url('dashboard') }}"
                 style="margin-top:7px; " >
                   Login
                 </a>
@@ -75,7 +75,7 @@
             <a class="page-scroll" href="{{url ('/dashboard/daftar/create')}}">Booking</a>
           </li>
           <li>
-            <a class="page-scroll" href="{{url ('home')}}">Login</a>
+            <a class="page-scroll" href="{{url ('dashboard')}}">Login</a>
           </li>
         </ul>
         <!-- Mobile Menu End -->

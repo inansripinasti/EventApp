@@ -28,11 +28,11 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/dashboard', [DashboardController::class, 'index']);
-Route::get('/dashboard/daftar', [DaftarController::class, 'index']);
-Route::get('/dashboard/kegiatan', [KegiatanController::class, 'index']);
-Route::get('/dashboard/jenisKeg', [jenisKegController::class, 'index']);
-Route::get('/dashboard/kategori', [KategoriController::class, 'index']);
+Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
+Route::get('/dashboard/daftar', [DaftarController::class, 'index'])->middleware('auth');
+Route::get('/dashboard/kegiatan', [KegiatanController::class, 'index'])->middleware('auth');
+Route::get('/dashboard/jenisKeg', [jenisKegController::class, 'index'])->middleware('auth');
+Route::get('/dashboard/kategori', [KategoriController::class, 'index'])->middleware('auth');
 
 
 
@@ -40,23 +40,23 @@ Route::get('/dashboard/daftar/create', [DaftarController::class, 'create']);
 Route::post('/dashboard/daftar/store', [DaftarController::class, 'store']);
 Route::delete('/dashboard/daftar/destroy/{id}', [DaftarController::class, 'destroy']);
 
-Route::get('/dashboard/kegiatan/create', [KegiatanController::class, 'create']);
+Route::get('/dashboard/kegiatan/create', [KegiatanController::class, 'create'])->middleware('auth');
 Route::post('/dashboard/kegiatan/store', [KegiatanController::class, 'store']);
 Route::delete('/dashboard/kegiatan/destroy/{id}', [KegiatanController::class, 'destroy']);
-Route::get('/dashboard/kegiatan/edit/{id}', [KegiatanController::class, 'edit']);
+Route::get('/dashboard/kegiatan/edit/{id}', [KegiatanController::class, 'edit'])->middleware('auth');
 Route::put('/dashboard/kegiatan/update/{id}', [KegiatanController::class, 'update']);
-Route::get('/dashboard/kegiatan/show/{id}', [KegiatanController::class, 'show']);
+Route::get('/dashboard/kegiatan/show/{id}', [KegiatanController::class, 'show'])->middleware('auth');
 
-Route::get('/dashboard/kategori/create', [KategoriController::class, 'create']);
+Route::get('/dashboard/kategori/create', [KategoriController::class, 'create'])->middleware('auth');
 Route::post('/dashboard/kategori/store', [KategoriController::class, 'store']);
 Route::delete('/dashboard/kategori/destroy/{id}', [KategoriController::class, 'destroy']);
-Route::get('/dashboard/kategori/edit/{id}', [KategoriController::class, 'edit']);
+Route::get('/dashboard/kategori/edit/{id}', [KategoriController::class, 'edit'])->middleware('auth');
 Route::put('/dashboard/kategori/update/{id}', [KategoriController::class, 'update']);
-Route::get('/dashboard/kategori/show/{id}', [KategoriController::class, 'show']);
+Route::get('/dashboard/kategori/show/{id}', [KategoriController::class, 'show'])->middleware('auth');
 
-Route::get('/dashboard/JenisKeg/create', [JenisKegController::class, 'create']);
+Route::get('/dashboard/JenisKeg/create', [JenisKegController::class, 'create'])->middleware('auth');
 Route::put('/dashboard/JenisKeg/update/{id}', [jenisKegController::class, 'update']);
-Route::get('/dashboard/JenisKeg/edit/{id}', [JenisKegController::class, 'edit']);
+Route::get('/dashboard/JenisKeg/edit/{id}', [JenisKegController::class, 'edit'])->middleware('auth');
 Route::post('/dashboard/JenisKeg/store', [JenisKegController::class, 'store']);
 Route::delete('/dashboard/JenisKeg/destroy/{id}', [JenisKegController::class, 'destroy']);
 

@@ -12,8 +12,8 @@
           <div class="carousel-item active">
             <img class="d-block w-100" src="{{ asset('landing_page/assets/img/slider/slide1.jpg') }}" alt="First slide">
             <div class="carousel-caption d-md-block">
-              <p class="fadeInUp wow" data-wow-delay=".6s">Global Grand Event on Digital Design</p>
-              <h1 class="wow fadeInDown heading" data-wow-delay=".4s">Design Thinking Conference</h1>
+              <h1 class="wow fadeInDown heading" data-wow-delay=".4s">Welcome</h1>
+              <p class="fadeInUp wow" data-wow-delay=".6s">Find the Best Events with Eventify</p>
               <a href="#" class="fadeInLeft wow btn btn-common btn-lg" data-wow-delay=".6s">Get Ticket</a>
               <a href="#" class="fadeInRight wow btn btn-border btn-lg" data-wow-delay=".6s">Explore More</a>
             </div>
@@ -21,15 +21,14 @@
           <div class="carousel-item">
             <img class="d-block w-100" src="{{ asset('landing_page/assets/img/slider/slide2.jpg') }}" alt="Second slide">
             <div class="carousel-caption d-md-block">
-              <p class="fadeInUp wow" data-wow-delay=".6s">Global Grand Event on Digital Design</p>
-              <h1 class="wow bounceIn heading" data-wow-delay=".7s">22 Amazing Speakers</h1>
+              <p class="fadeInUp wow" data-wow-delay=".6s"></p>
+              <h1 class="wow bounceIn heading" data-wow-delay=".7s"> Amazing Speakers</h1>
               <a href="#" class="fadeInUp wow btn btn-border btn-lg" data-wow-delay=".8s">Learn More</a>
             </div>
           </div>
           <div class="carousel-item">
             <img class="d-block w-100" src="{{ asset('landing_page/assets/img/slider/slide3.jpg') }}" alt="Third slide">
             <div class="carousel-caption d-md-block">
-              <p class="fadeInUp wow" data-wow-delay=".6s">Global Grand Event on Digital Design</p>
               <h1 class="wow fadeInUp heading" data-wow-delay=".6s">Book Your Seat Now!</h1>
               <a href="#" class="fadeInUp wow btn btn-common btn-lg" data-wow-delay=".8s">Explore</a>
             </div>
@@ -49,34 +48,13 @@
     </header>
     <!-- Header Area wrapper End -->
 
-    <!-- Coundown Section Start -->
-    <section class="countdown-timer section-padding">
-      <div class="container">
-        <div class="row text-center">
-          <div class="col-md-12 col-sm-12 col-xs-12">
-            <div class="heading-count">
-              <h2 class="wow fadeInDown" data-wow-delay="0.2s">Event Will Start In</h2>
-            </div>
-          </div>
-          <div class="col-md-12 col-sm-12 col-xs-12">
-            <div class="row time-countdown justify-content-center wow fadeInUp" data-wow-delay="0.2s">
-              <div id="clock" class="time-count"></div>
-            </div>
-            <a href="pricing.html" class="btn btn-common wow fadeInUp" data-wow-delay="0.3s">Add to My Calender</a>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Coundown Section End -->    
-
     <!-- About Section Start -->
     <section id="about" class="section-padding">
       <div class="container">
         <div class="row">
           <div class="col-12">
             <div class="section-title-header text-center">
-              <h1 class="section-title wow fadeInUp" data-wow-delay="0.2s">About This Events</h1>
-              <p class="wow fadeInDown" data-wow-delay="0.2s">Global Grand Event on Digital Design</p>
+              <h1 class="section-title wow fadeInUp" data-wow-delay="0.2s">Events</h1>
             </div>
           </div>
         </div>
@@ -113,7 +91,7 @@
             <div class="counter wow fadeInRight" data-wow-delay="0.6s">
               <div class="icon"><i class="lni-timer"></i></div>
               <p>February 14 - 19, 2023</p>
-              <span>09:00 AM – 05:00 PM</span>
+              <span>09:00 AM - 05:00 PM</span>
             </div>
           </div>
           <!-- Counter Item -->
@@ -143,8 +121,8 @@
         <div class="row">
           <div class="col-12">
             <div class="section-title-header text-center">
-              <h1 class="section-title wow fadeInUp" data-wow-delay="0.2s">Our Event Gallery</h1>
-              <p class="wow fadeInDown" data-wow-delay="0.2s">"Ativity Documentation"</p>
+              <h1 class="section-title wow fadeInUp" data-wow-delay="0.2s">Gallery</h1>
+              <p class="wow fadeInDown" data-wow-delay="0.2s">"Activity Documentation"</p>
             </div>
           </div> 
         </div>

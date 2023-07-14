@@ -81,7 +81,7 @@
                         <select name="jenis_kegiatan" id="jenis_kegiatan" class="form-control">
                             <option value="">Pilih Kegiatan</option>
                             @foreach ($jenis_kegiatan as $jenis)
-                            <option value="">{{ $jenis->nama }}</option>
+                            <option value="{{$jenis->nama}}">{{ $jenis->nama }}</option>
                             @endforeach
                           </select>
                     </div>

@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 // import model
 use App\Models\Kegiatan;
-use App\Models\Daftar;
 
 class IndexController extends Controller
 {

@@ -88,7 +88,7 @@ class jenisKegController extends Controller
 
         //update
         $jenis_kegiatan->update($validated);
-        return redirect('/dashboard/jenisKeg');
+        return redirect('/dashboard/jenisKeg')->with('success', 'Data Berhasil di Perbarui');
     }
 
     /**

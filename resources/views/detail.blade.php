@@ -4,7 +4,7 @@
     <div class=" col-md-5 ">
 
         <section id="contact" class="contact-area pt-115">
-            <div class="container " style="border: 1px solid #ddd; margin-top:100px;">
+            <div class="container " style="background-color:aliceblue; border: 1px solid #ddd; margin-top:100px; margin-bottom:100px;">
                 <div class="row justify-content-center">
                     <div class="col-lg-12">
                         <div class="contact-title text-center" style="margin-top: 35px;">
@@ -17,7 +17,7 @@
                         <div class="col-lg-12">
                             <div class="contact-form">
                                 <div>
-                                    <img class="img-fluid" src="assets/images/product/produk.png" width="400px" alt="Foto Produk" />
+                                    <img class="img-fluid" src="{{ asset('landing_page/assets/img/about/img1.jpg') }}" width="400px" alt="" style="margin-left:40px;" />
                                     <div>
                                         <table class="table">
                                             <tr>
@@ -49,9 +49,9 @@
                                                 <td>{{$kegiatan->jenis_kegiatan}}</td>
                                             </tr>
                                         </table>
-                                        <div class="container d-flex justify-content-center">
-                                            <a class="main-btn" type="submit" style="border-radius: 30px; margin:auto" href="index.php#product">Kembali</a>
-                                            <a class="main-btn" type="submit" style="border-radius: 30px; margin:auto" href="{{ url('/dashboard/daftar/create') }}">Booking Now</a>
+                                        <div class="container d-flex justify-content-center" style="margin-bottom:50px;">
+                                            <a class="btn btn-common btn-rm" type="submit" style="border-radius: 30px; margin:auto" href="{{ url('/index') }}">Kembali</a>
+                                            <a class="btn btn-common btn-rm" type="submit" style="border-radius: 30px; margin:auto" href="{{ url('/dashboard/daftar/create') }}">Booking Now</a>
                                         </div>
                                     </div>
                                 </div>

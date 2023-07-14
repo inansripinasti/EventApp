@@ -17,6 +17,11 @@
                         @if (count($errors) > 0)
                         <div class="alert alert-danger">
                             <ul>
+                              @if (session('success'))
+                              <div class="alert alert-success">
+                                  {{ session('success') }}
+                              </div>
+                              @endif
                                 @foreach ($errors->all() as $error)
                                     <li>{{ $error }}</li>
                                 @endforeach
@@ -45,7 +50,7 @@
                               <select name="nama_kegiatan" id="nama_kegiatan" class="form-control">
                                 <option value="">Pilih Kegiatan</option>
                                 @foreach ($kegiatan as $kegiatans)
-                                <option value="">{{ $kegiatans->judul }}</option>
+                                <option value="{{ $kegiatans->judul }}">{{ $kegiatans->judul }}</option>
                                 @endforeach
                               </select>
                                 {{-- <input type="text" class="form-control" id="nama_kegiatan" name="nama_kegiatan"
@@ -58,7 +63,7 @@
                               <select name="kategori_peserta" id="kategori_peserta" class="form-control">
                                 <option value="">Pilih Kategori Peserta</option>
                                 @foreach ($kategori_peserta as $kategoris)
-                                <option value="">{{ $kategoris->nama }}</option>
+                                <option value="{{ $kategoris->id }}">{{ $kategoris->nama }}</option>
                                 @endforeach
                               </select>
                             </div>

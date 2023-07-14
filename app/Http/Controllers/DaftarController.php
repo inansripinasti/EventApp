@@ -30,11 +30,7 @@ class DaftarController extends Controller
     {
         $kategori_peserta = Kategori_peserta::all();
         $kegiatan = Kegiatan::all();
-
-        return view('admin.daftar.create', [
-            'kegiatan' => $kegiatan,
-            'kategori_peserta' => $kategori_peserta
-        ]);
+        return view('admin.daftar.create', compact('kategori_peserta','kegiatan'));
     }
 
     /**
@@ -42,20 +38,18 @@ class DaftarController extends Controller
      */
     public function store(Request $request)
     {
-        $jenis_kegiatan_options = Kegiatan::pluck('judul')->toArray();
-        $kategori_peserta_options = Kategori_peserta::pluck('nama')->toArray();
-        // validasi form
+        ///validasi form input
         $validated = $request->validate([
+            'nama_peserta' => 'required',
             'tgl_daftar' => 'required',
             'alasan' => 'required',
-            'nama_peserta' => 'required',
-            'nama_kegiatan' => 'required'| 'in:' . implode(',', $jenis_kegiatan_options),
-            'kategori_peserta' => 'required'| 'in:' . implode(',', $kategori_peserta_options),
+            'nama_kegiatan' => 'required',
+            'kategori_peserta' => 'required',
 
         ]);
-        // 
         Daftar::create($validated);
-        return redirect('/dashboard/daftar/create');
+        return redirect('dashboard/daftar/create')->with('success', 'Data Terkirim!');
+        
     }
 
     /**
