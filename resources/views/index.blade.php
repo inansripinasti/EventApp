@@ -61,7 +61,7 @@
         <div class="row" style="display: flex;">
             @foreach ($kegiatan as $kegiatans)
             <div class="about-item col-md-4" style="margin-bottom: 5px; text-align:center;" width="200px">
-              <img class="img-fluid" src="{{ asset('landing_page/assets/img/about/img1.jpg') }}" alt="">
+              <img class="img-fluid" src="{{ asset('landing_page/assets/img/about/img4.png') }}" alt="">
               <div class="about-text">
                 <h3><a href="#">{{ $kegiatans->judul }}</a></h3>
                 <p>Rp. {{ number_format($kegiatans->harga_tiket, 0) }}</p>
