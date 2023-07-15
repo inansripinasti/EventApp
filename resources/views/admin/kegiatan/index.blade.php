@@ -50,7 +50,7 @@
                                   <form action="{{url('/dashboard/kegiatan/destroy', $kegiatans->id)}}" method="post" class="d-inline">
                                   @csrf
                                   @method('DELETE')
-                                    <button type="submit" class="btn btn-danger btn-sm" onclick="if(!confirm('Anda Yakin Hapus Kegiatn?')) {return false}" >Delete</button>
+                                    <button type="submit" class="btn btn-danger btn-sm" onclick="if(!confirm('Anda Yakin Hapus Kegiatan?')) {return false}" >Delete</button>
                                   </form>
                               </td>
                           </tr>

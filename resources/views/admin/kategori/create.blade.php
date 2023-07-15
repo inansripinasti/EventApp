@@ -35,7 +35,7 @@
                     <label for="nama" class="col-sm-4 col-form-label">Nama Kategori Peserta</label>
                     <div class="col-sm-8">
                         <input type="text" class="form-control" id="nama" name="nama"
-                            placeholder="jenis kegiatan">
+                            placeholder="Masukkan Kategori Kegiatan">
                     </div>
                 </div>
                 <button type="submit" class="btn btn-gradient-primary me-2">Submit</button>

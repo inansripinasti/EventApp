@@ -46,7 +46,7 @@
                                   <form action="{{url('/dashboard/kategori/destroy', $Kategori_peserta->id)}}" method="post" class="d-inline">
                                   @csrf
                                   @method('DELETE')
-                                    <button type="submit" class="btn btn-danger btn-sm" onclick="if(!confirm('Anda Yakin Hapus Kegiatn?')) {return false}" >Delete</button>
+                                    <button type="submit" class="btn btn-danger btn-sm" onclick="if(!confirm('Anda Yakin Hapus Kategori ini?')) {return false}" >Delete</button>
                                   </form>
                               </td>
                           </tr>

@@ -40,7 +40,7 @@
                     </div>
                 </div>
                 <button type="submit" class="btn btn-gradient-primary me-2">Submit</button>
-                <a type="button" href="{{ url('/dashboard/kegiatan') }}" class="btn btn-light">Back</a>
+                <a type="button" href="{{ url('/dashboard/kategori') }}" class="btn btn-light">Back</a>
 
             </form>
         </div>
